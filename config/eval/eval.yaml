@@ -1,0 +1,46 @@
+# SoundnessBench evaluation config.
+
+# Download the benchmark JSONL from:
+# https://huggingface.co/datasets/hosytuyen/SoundnessBench
+pairs_path: "data/soundnessbench.jsonl"
+output_path: "results/eval_results.json"
+
+# Providers supported by rigorbench.llm.client: openai, anthropic, gemini,
+# vertex_ai, vllm. API keys should be supplied via environment variables or .env.
+provider: "openai"
+
+openai:
+  model: "gpt-4o-mini"
+  # base_url can be omitted for the official OpenAI API.
+  # base_url: "https://api.openai.com/v1"
+
+anthropic:
+  model: "claude-3-5-sonnet-20241022"
+
+vertex_ai:
+  model: "gemini-2.5-pro"
+  location: "us-central1"
+
+google:
+  model: "gemini-2.5-pro"
+
+vllm:
+  base_url: "http://localhost:8000/v1"
+  model: "Qwen/Qwen2.5-7B-Instruct"
+
+# Main modes for the paper:
+# - direct_bucket: standard binary soundness/rigor prompt
+# - direct_bucket_aggressive: stricter prompt that defaults to low under ambiguity
+evaluation_mode: "direct_bucket"
+bucket_labels: ["low", "high"]
+
+# Use 0 to evaluate all pairs in the selected split.
+max_test_pairs: 0
+test_ratio: 1.0
+
+prompt_paths:
+  direct_bucket: "config/eval/prompt_direct_bucket.md"
+  direct_bucket_aggressive: "config/eval/prompt_direct_bucket_aggressive.md"
+
+max_tokens: 8192
+temperature: 0.2
