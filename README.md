@@ -26,9 +26,9 @@ Abstract: Autonomous AI research agents aim to accelerate scientific discovery b
 
 - **May 30, 2026**: Released the data on HF, and eval code for standard/aggressive prompt!
 
-## Leaderboard
+## Leaderboard (Top-10 only)
 
-Full, continuously updated leaderboard available [here](https://hosytuyen.github.io/projects/SoundnessBench/).
+Full, interactive, continuously updated leaderboard available [here](https://hosytuyen.github.io/projects/SoundnessBench/).
 
 | Rank | Model | Eval Mode | FP Rate ↓ | FN Rate ↓ | TP Rate ↑ | TN Rate ↑ | Recall ↑ | Precision ↑ | F1 ↑ |
 |---|---|---|---|---|---|---|---|---|---|
@@ -42,20 +42,6 @@ Full, continuously updated leaderboard available [here](https://hosytuyen.github
 | 8 | Qwen3.5-122B-A10B | Standard Prompt | 73.4% | 9.4% | 90.6% | 26.6% | 90.6% | 63.4% | 74.6% |
 | 9 | GPT-4o | Standard Prompt | 94.5% | 1.1% | 98.9% | 5.5% | 98.9% | 59.4% | 74.2% |
 | 10 | LLaMA-3.3-70B-Instruct | Standard Prompt | 98.0% | 0.6% | 99.4% | 2.0% | 99.4% | 58.7% | 73.8% |
-| 11 | GPT-5.4-Mini | Standard Prompt | 49.3% | 23.4% | 76.6% | 50.7% | 76.6% | 68.5% | 72.3% |
-| 12 | claude-opus-4-6 | Aggressive Prompt | 27.8% | 33.6% | 66.4% | 72.2% | 66.4% | 73.9% | 70.0% |
-| 13 | LLaMA-3.3-70B-Instruct | Aggressive Prompt | 60.7% | 23.9% | 76.1% | 39.3% | 76.1% | 63.7% | 69.4% |
-| 14 | Kimi-Linear-48B-A3B | Standard Prompt | 86.2% | 15.4% | 84.6% | 13.8% | 84.6% | 57.8% | 68.7% |
-| 15 | Gemini-3-Flash | Aggressive Prompt | 23.6% | 39.6% | 60.4% | 76.4% | 60.4% | 78.2% | 68.1% |
-| 16 | Gemini-2.5-Pro | Aggressive Prompt | 26.6% | 44.9% | 55.1% | 73.4% | 55.1% | 74.3% | 63.3% |
-| 17 | Kimi-Linear-48B-A3B | Aggressive Prompt | 49.7% | 53.0% | 47.0% | 50.3% | 47.0% | 57.0% | 51.5% |
-| 18 | Gemini-3.1-Pro | Aggressive Prompt | 10.9% | 64.1% | 35.9% | 89.1% | 35.9% | 82.1% | 49.9% |
-| 19 | Qwen3.5-27B | Aggressive Prompt | 16.2% | 67.6% | 32.4% | 83.8% | 32.4% | 73.8% | 45.1% |
-| 20 | GPT-4o | Aggressive Prompt | 12.9% | 75.0% | 25.0% | 87.1% | 25.0% | 73.1% | 37.2% |
-| 21 | claude-sonnet-4-6 | Aggressive Prompt | 5.6% | 81.2% | 18.8% | 94.4% | 18.8% | 81.5% | 30.6% |
-| 22 | Qwen3.5-122B-A10B | Aggressive Prompt | 4.4% | 83.2% | 16.8% | 95.6% | 16.8% | 84.4% | 28.1% |
-| 23 | GPT-5.4-Mini | Aggressive Prompt | 0.0% | 99.8% | 0.2% | 100.0% | 0.2% | 100.0% | 0.3% |
-| 24 | GPT-5.4 | Aggressive Prompt | 0.0% | 100.0% | 0.0% | 100.0% | 0.0% | -- | -- |
 
 ## Install
 
