@@ -22,6 +22,41 @@
 Abstract: Autonomous AI research agents aim to accelerate scientific discovery by automating the research pipeline, from hypothesis generation to peer review. However, existing benchmarks rarely test a fundamental bottleneck: whether Large Language Models can judge the methodological viability of a research idea before expending time and computational resources. We introduce SoundnessBench, a curated benchmark of 1,099 machine-learning research proposals reconstructed from ICLR submissions, labeled with reviewer soundness sub-scores, and audited against source papers. SoundnessBench should be interpreted as a benchmark for recoverable proposal-stage soundness rather than exact prediction of full-paper review outcomes. Across 12 frontier LLMs, we find a pervasive optimism bias: under standard prompting, models frequently rate low-soundness proposals as sound, while aggressive prompting largely shifts errors from false positives to false negatives. Additional controls for public-corpus contamination, paper-identifying phrases, surface features, and human audit quality suggest that this behavior is not explained by a single confounder. Our results indicate that current LLMs are not yet reliable as standalone first-gate evaluators for scientific rigor.
 
 
+## News
+
+- **May 30, 2026**: Released the data on HF, and eval code for standard/aggressive prompt!
+
+## Leaderboard
+
+Full, continuously updated leaderboard available [here](https://hosytuyen.github.io/projects/SoundnessBench/).
+
+| Rank | Model | Eval Mode | FP Rate ↓ | FN Rate ↓ | TP Rate ↑ | TN Rate ↑ | Recall ↑ | Precision ↑ | F1 ↑ |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | Claude-Sonnet-4-6 | Standard Prompt | 62.8% | 5.2% | 94.8% | 37.2% | 94.8% | 67.7% | 79.0% |
+| 2 | claude-opus-4-6 | Standard Prompt | 71.8% | 2.8% | 97.2% | 28.2% | 97.2% | 64.8% | 77.7% |
+| 3 | Gemini-3.1-Pro | Standard Prompt | 74.0% | 3.9% | 96.1% | 26.0% | 96.1% | 64.5% | 77.2% |
+| 4 | Gemini-3-Flash | Standard Prompt | 80.3% | 1.9% | 98.1% | 19.7% | 98.1% | 63.1% | 76.8% |
+| 5 | Gemini-2.5-Pro | Standard Prompt | 86.2% | 1.6% | 98.4% | 13.8% | 98.4% | 61.5% | 75.7% |
+| 6 | Qwen3.5-27B | Standard Prompt | 76.4% | 7.5% | 92.5% | 23.6% | 92.5% | 62.9% | 74.9% |
+| 7 | GPT-5.4 | Standard Prompt | 35.4% | 25.4% | 74.6% | 64.6% | 74.6% | 74.7% | 74.6% |
+| 8 | Qwen3.5-122B-A10B | Standard Prompt | 73.4% | 9.4% | 90.6% | 26.6% | 90.6% | 63.4% | 74.6% |
+| 9 | GPT-4o | Standard Prompt | 94.5% | 1.1% | 98.9% | 5.5% | 98.9% | 59.4% | 74.2% |
+| 10 | LLaMA-3.3-70B-Instruct | Standard Prompt | 98.0% | 0.6% | 99.4% | 2.0% | 99.4% | 58.7% | 73.8% |
+| 11 | GPT-5.4-Mini | Standard Prompt | 49.3% | 23.4% | 76.6% | 50.7% | 76.6% | 68.5% | 72.3% |
+| 12 | claude-opus-4-6 | Aggressive Prompt | 27.8% | 33.6% | 66.4% | 72.2% | 66.4% | 73.9% | 70.0% |
+| 13 | LLaMA-3.3-70B-Instruct | Aggressive Prompt | 60.7% | 23.9% | 76.1% | 39.3% | 76.1% | 63.7% | 69.4% |
+| 14 | Kimi-Linear-48B-A3B | Standard Prompt | 86.2% | 15.4% | 84.6% | 13.8% | 84.6% | 57.8% | 68.7% |
+| 15 | Gemini-3-Flash | Aggressive Prompt | 23.6% | 39.6% | 60.4% | 76.4% | 60.4% | 78.2% | 68.1% |
+| 16 | Gemini-2.5-Pro | Aggressive Prompt | 26.6% | 44.9% | 55.1% | 73.4% | 55.1% | 74.3% | 63.3% |
+| 17 | Kimi-Linear-48B-A3B | Aggressive Prompt | 49.7% | 53.0% | 47.0% | 50.3% | 47.0% | 57.0% | 51.5% |
+| 18 | Gemini-3.1-Pro | Aggressive Prompt | 10.9% | 64.1% | 35.9% | 89.1% | 35.9% | 82.1% | 49.9% |
+| 19 | Qwen3.5-27B | Aggressive Prompt | 16.2% | 67.6% | 32.4% | 83.8% | 32.4% | 73.8% | 45.1% |
+| 20 | GPT-4o | Aggressive Prompt | 12.9% | 75.0% | 25.0% | 87.1% | 25.0% | 73.1% | 37.2% |
+| 21 | claude-sonnet-4-6 | Aggressive Prompt | 5.6% | 81.2% | 18.8% | 94.4% | 18.8% | 81.5% | 30.6% |
+| 22 | Qwen3.5-122B-A10B | Aggressive Prompt | 4.4% | 83.2% | 16.8% | 95.6% | 16.8% | 84.4% | 28.1% |
+| 23 | GPT-5.4-Mini | Aggressive Prompt | 0.0% | 99.8% | 0.2% | 100.0% | 0.2% | 100.0% | 0.3% |
+| 24 | GPT-5.4 | Aggressive Prompt | 0.0% | 100.0% | 0.0% | 100.0% | 0.0% | -- | -- |
+
 ## Install
 
 ```bash
